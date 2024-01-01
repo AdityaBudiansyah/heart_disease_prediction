@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 import streamlit as st
 
-@st.cache()
+@st.cache_data()
 def load_data():
     df = pd.read_csv('Heart-Disease-Prediction.csv')
 
@@ -13,7 +13,7 @@ def load_data():
 
     return df, x, y
 
-@st.cache()
+@st.cache_data()
 def train_model(x,y):
     model = DecisionTreeClassifier(
             ccp_alpha=0.0, class_weight=None, criterion='entropy',
